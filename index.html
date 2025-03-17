@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Info</title>
+    <style>
+        body {
+            background-image: url('https://wallpaperaccess.com/full/869923.gif'); /* Adicione o caminho do seu GIF aqui */
+            background-size: cover;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .box {
+            text-align: center;
+            padding: 20px;
+            border: 3px solid purple;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.6); /* Transparente com leve fundo preto */
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .yes {
+            background-color: green;
+            color: white;
+        }
+        .no {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Informações confidenciais, quer mesmo entrar?</h2>
+        <div class="buttons">
+            <button class="yes" onclick="window.location.href='privado.html'">Sim</button>
+            <button class="no" onclick="window.location.href='negado.html'">Não</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senha Correta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black; /* Fundo preto */
+            color: white; /* Texto branco */
+        }
+        .container {
+            background-color: #333333; /* Cinza escuro */
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .container.flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .foto-grande img {
+            max-width: 300px;
+        }
+        .fotos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .fotos img {
+            width: 150px;
+            height: auto;
+        }
+        .imagem-centralizada {
+            margin-top: 20px;
+        }
+        .imagem-centralizada img {
+            width: 300px;
+            height: auto;
+        }
+        .avaliacao {
+            margin-top: 30px;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+            background-color: #555555;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #777777;
+        }
+        @keyframes coracaoAnimado {
+            0% { transform: scale(1) translateY(0); opacity: 1; }
+            100% { transform: scale(2) translateY(-200px); opacity: 0; }
+        }
+        @keyframes geloAnimado {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(200px); opacity: 0; }
+        }
+        @keyframes dragonAnimado {
+            0% { transform: rotate(0) scale(1); opacity: 1; }
+            100% { transform: rotate(360deg) scale(2); opacity: 0; }
+        }
+        .coracao {
+            position: absolute;
+            color: red;
+            font-size: 2rem;
+            animation: coracaoAnimado 2s ease-out;
+            pointer-events: none;
+        }
+        .flocos {
+            position: absolute;
+            color: lightblue;
+            font-size: 1.5rem;
+            animation: geloAnimado 3s linear;
+            pointer-events: none;
+        }
+        .dragon {
+            position: absolute;
+            font-size: 2rem;
+            animation: dragonAnimado 4s ease-out;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container flex">
+        <div class="foto-grande">
+            <img src="foto8.jpg" alt="Foto">
+        </div>
+        <div class="texto-grande">
+            <p2>nao sou bom com palavras, entao vai tomar no cu.</p2>
+        </div>
+    </div>
+    <div class="container">
+        <div class="fotos">
+            <img src="foto9.jpg" alt="Foto 2">
+            <img src="foto10.jpg" alt="Foto 3">
+            <img src="foto11.jpg" alt="Foto 4">
+            <img src="foto12.jpg" alt="Foto 5">
+        </div>
+        <div class="imagem-centralizada">
+            <img src="foto13.jpg" alt="Imagem centralizada">
+        </div>
+        <p>Mesmo sendo de outra mae te considero irma, sempre tava cmg quando precisei ❤️.</p>
+    </div>
+    <div class="container avaliacao">
+        <h2>Aperte nessas poha</h2>
+        <button onclick="efeitoAmei(event)">Amei 😍</button>
+        <button onclick="efeitoDahora(event)">Dahora 🫡</button>
+        <button onclick="efeitoDragon(event)">Mt top dragon, seu lindo, foda e rei dos reis 🐉🌹</button>
+    </div>
+
+    <script>
+        function criarEfeito(tipo, x, y) {
+            const efeito = document.createElement('div');
+            efeito.classList.add(tipo);
+            efeito.style.left = `${x}px`;
+            efeito.style.top = `${y}px`;
+
+            if (tipo === 'coracao') efeito.textContent = '❤️';
+            else if (tipo === 'flocos') efeito.textContent = '❄️';
+            else if (tipo === 'dragon') efeito.textContent = '🐉🌹';
+
+            document.body.appendChild(efeito);
+
+            setTimeout(() => {
+                efeito.remove();
+            }, 3000); // Remove o efeito após 3 segundos
+        }
+
+        function efeitoAmei(event) {
+            criarEfeito('coracao', event.clientX, event.clientY);
+        }
+
+        function efeitoDahora(event) {
+            criarEfeito('flocos', event.clientX, event.clientY);
+        }
+
+        function efeitoDragon(event) {
+            criarEfeito('dragon', event.clientX, event.clientY);
+        }
+    </script>
+</body>
+</html>

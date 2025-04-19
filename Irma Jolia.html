@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irma Jolia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black; /* Fundo preto */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #333333; /* Cinza escuro */
+            color: white; /* Texto branco para contraste */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para destaque */
+            min-height: 400px; /* Garante altura mínima */
+            display: flex;
+            flex-direction: column; /* Organiza os elementos em coluna */
+            justify-content: center; /* Centraliza os elementos verticalmente */
+        }
+        .foto-texto {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap; /* Responsivo */
+            margin-bottom: 20px;
+        }
+        .foto-texto img {
+            margin-right: 20px;
+            margin-bottom: 10px;
+            width: 200px; /* Ajusta o tamanho da foto */
+        }
+        .botoes {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4800ce;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #6400b6;
+        }
+        input[type="password"] {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>𝑩𝒚: 𝑫𝒓𝒂𝒈𝒐𝒏</h1>
+        <p>Vc que é essa coisa?.</p>
+        <div class="foto-texto">
+            <img src="foto1.jpg" alt="Foto 1">
+            <div class="botoes">
+                <button onclick="redirecionar('sim.html')">Sim</button>
+                <button onclick="redirecionar('nao.html')">Não</button>
+            </div>
+        </div>
+        <div>
+            <input type="password" id="password" placeholder="Digite a senha">
+            <button onclick="checkPassword()">Entrar</button>
+        </div>
+    </div>
+
+    <script>
+        function redirecionar(pagina) {
+            // Redireciona para a página especificada
+            window.location.href = pagina;
+        }
+
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === 'Jolia' || password.toLowerCase() === 'irma jolia') {
+                // Redireciona para senhacorreta.html se a senha estiver correta
+                window.location.href = 'senhacorreta.html';
+            } else {
+                alert('Faz direito krl');
+            }
+        }
+    </script>
+</body>
+</html>
